@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_base;
     }
 
+    
     @Override
     protected void onDestroy() {
         super.onDestroy();
