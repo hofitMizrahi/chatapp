@@ -1,4 +1,4 @@
-package com.mizshalom.chatapp.application;
+package com.mizshalom.chatapp.utils;
 
 public class Constants {
 

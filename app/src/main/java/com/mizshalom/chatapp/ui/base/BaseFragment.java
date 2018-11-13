@@ -5,11 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.View;
-
-import java.io.FileReader;
-
+import com.mizshalom.chatapp.ui.main.view.MainActivity;
 import butterknife.ButterKnife;
 
 public abstract class BaseFragment extends Fragment {
@@ -43,6 +40,14 @@ public abstract class BaseFragment extends Fragment {
         if (context instanceof BaseActivity) {
             mBaseActivity = (BaseActivity) getActivity();
 
+        }
+    }
+
+    public void replaceFragment(BaseFragment fragment, boolean addToBackStack, String tag) {
+
+        if (getActivity() instanceof MainActivity && isAdded()) {
+            MainActivity activity = (MainActivity) getActivity();
+            activity.replaceFragment(fragment, tag, addToBackStack);
         }
     }
 
